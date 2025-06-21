@@ -8,14 +8,48 @@ int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
+    //Psição atual da peça no tabuleiro (lina e coluna de 0 a 7)
+    int linha = 4; // Exemplo: posição inicial da peça na linha 4
+    int coluna = 4; // Exemplo: posição inicial da peça na coluna 4
+
+    printf("Peça posicionada em (%d, %d)\n", linha, coluna);
+
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    printf("\nMovimentos do Bispo (diagonais):\n");
+
+    //Diagonal Superior Esquerda
+    for(int i = 1; linha - i >= 0; i++){
+        ptintf("(%d, %d)\n", linha - i, coluna - i);
+    }
+    //Diagonal Superior Direita
+    for(int i = 1; linha - i >= 0; i++){
+        printf("(%d, %d)\n", linha - i, coluna + i);
+    }
+    //Diagonal Inferior Esquerda
+    for(int i = 1; linha + i <= 7; i++){
+        printf("(%d, %d)\n", linha + i, coluna - i);
+    }
+    //Diagonal Inferior Direita
+    for(int i = 1; linha + i <= 7; i++){
+        printf("(%d, %d)\n", linha + i, coluna + i);
+    }
 
     // Implementação de Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    printf("\nMovimentos da Torre (para direita):\n");
+
+    for(int j = coluna + 1; j < 8; j++) {
+        printf("(%d, %d)\n", linha, j);
+    }
 
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    printf("\nMovimentos da RAINHA(para esquerda):\n");
+    for(int j = coluna - 1; j >= 0; j--) {
+        printf("(%d, %d)\n", linha, j);
+    }
+    
 
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
