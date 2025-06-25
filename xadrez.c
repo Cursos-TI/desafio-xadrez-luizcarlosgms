@@ -20,7 +20,7 @@ int main() {
 
     //Diagonal Superior Esquerda
     for(int i = 1; linha - i >= 0; i++){
-        ptintf("(%d, %d)\n", linha - i, coluna - i);
+        printf("(%d, %d)\n", linha - i, coluna - i);
     }
     //Diagonal Superior Direita
     for(int i = 1; linha - i >= 0; i++){
@@ -50,10 +50,21 @@ int main() {
         printf("(%d, %d)\n", linha, j);
     }
     
-
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
+    printf("\nMovimentos do Cavalo (em L):\n");
+    int movimentodCavalo[8][2] = {
+        {2, 1}, {2, -1}, {-2, 1}, {-2, -1},
+        {1, 2}, {1, -2}, {-1, 2}, {-1, -2}
+    };
+    for(int i = 0; i < 8; i++) {
+        int novaLinha = linha + movimentodCavalo[i][0];
+        int novaColuna = coluna + movimentodCavalo[i][1];
+        if(novaLinha >= 0 && novaLinha < 8 && novaColuna >= 0 && novaColuna < 8) {
+            printf("(%d, %d)\n", novaLinha, novaColuna);
+        }
+    }
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
